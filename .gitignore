@@ -1,0 +1,7 @@
+build/
+*.o
+todo_cli
+todos.txt
+*.swp
+*~
+.DS_Store
