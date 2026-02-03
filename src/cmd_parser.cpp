@@ -93,6 +93,11 @@ ParsedCommand parseLine(const std::string& line) {
         return result;
     }
 
+    if (cmd == "clear" || cmd == "c") {
+        result.cmd = Command::Clear;
+        return result;
+    }
+
     if (cmd == "quit" || cmd == "q" || cmd == "exit") {
         result.cmd = Command::Quit;
         return result;
@@ -114,6 +119,7 @@ void printHelp() {
               << "  remove <id>                     删除待办\n"
               << "  update <id> <新标题>            修改标题\n"
               << "  list [分类]                     列出全部或指定分类\n"
+              << "  clear                           清空全部待办\n"
               << "  quit / exit                     退出（数据自动保存）\n"
               << "  help                            显示此帮助\n";
 }

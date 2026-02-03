@@ -15,6 +15,7 @@ enum class Command {
     Update,
     List,
     ListCategory,
+    Clear,
     Quit,
     Help,
     Unknown
