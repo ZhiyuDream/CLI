@@ -24,6 +24,9 @@ public:
     const TodoItem* find(int id) const;
     size_t size() const;
 
+    /** 清空全部待办 */
+    void clearAll();
+
     /** 供 Storage 使用：替换全部项（加载后） */
     void setItems(const std::vector<TodoItem>& items);
     /** 供 Storage 使用：获取全部项 */

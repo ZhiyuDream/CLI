@@ -66,6 +66,8 @@ const TodoItem* TodoManager::find(int id) const {
 
 size_t TodoManager::size() const { return items_.size(); }
 
+void TodoManager::clearAll() { items_.clear(); }
+
 void TodoManager::setItems(const std::vector<TodoItem>& items) { items_ = items; }
 
 void TodoManager::getAll(std::vector<TodoItem>& out) const { out = items_; }

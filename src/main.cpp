@@ -8,6 +8,7 @@
 namespace {
 
 const char* kDataFile = "todos.txt";
+const char* kVersion = "0.2.0";
 
 void runAdd(todo::TodoManager& mgr, const std::vector<std::string>& args) {
     if (args.empty()) {
@@ -81,6 +82,11 @@ void runList(todo::TodoManager& mgr, const std::vector<std::string>& args) {
     printItems(out);
 }
 
+void runClear(todo::TodoManager& mgr) {
+    mgr.clearAll();
+    std::cout << "已清空全部待办。\n";
+}
+
 }  // namespace
 
 int main() {
@@ -94,7 +100,11 @@ int main() {
         std::cerr << "无法读取 " << kDataFile << "\n";
     }
 
-    std::cout << "待办 CLI (输入 help 查看命令)\n";
+    std::cout << "\n";
+    std::cout << "  ========================================\n";
+    std::cout << "      待办 CLI  v" << kVersion << "\n";
+    std::cout << "  ========================================\n";
+    std::cout << "  输入 help 查看命令\n\n";
 
     while (true) {
         std::cout << "> ";
@@ -122,6 +132,9 @@ int main() {
             case todo::Command::List:
             case todo::Command::ListCategory:
                 runList(manager, pc.args);
+                break;
+            case todo::Command::Clear:
+                runClear(manager);
                 break;
             case todo::Command::Quit: {
                 std::vector<todo::TodoItem> toSave;

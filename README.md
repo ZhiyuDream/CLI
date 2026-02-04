@@ -53,5 +53,6 @@ make
 | remove \<id\> | 删除 |
 | update \<id\> \<新标题\> | 修改标题 |
 | list [分类] | 列出全部或指定分类 |
+| clear | 清空全部待办 |
 | quit / exit | 退出并保存 |
 | help | 显示帮助 |
