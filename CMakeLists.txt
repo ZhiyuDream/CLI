@@ -11,6 +11,7 @@ add_executable(todo_cli
   ${SRC_DIR}/todo_item.cpp
   ${SRC_DIR}/storage.cpp
   ${SRC_DIR}/todo_manager.cpp
-  ${SRC_DIR}/cmd_parser.cpp
+  ${SRC_DIR}/string_utils.cpp
+  ${SRC_DIR}/parser.cpp
 )
 target_include_directories(todo_cli PRIVATE ${INC_DIR})

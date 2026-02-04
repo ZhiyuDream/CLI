@@ -19,13 +19,15 @@ todo-cli/
 │   ├── todo_item.h   # 单条待办
 │   ├── storage.h     # 文件持久化
 │   ├── todo_manager.h# 待办集合管理
-│   └── cmd_parser.h  # 命令解析
+│   ├── cmd_parser.h  # 命令解析（API）
+│   └── string_utils.h# 字符串工具（trim/split）
 ├── src/              # 实现
 │   ├── main.cpp
 │   ├── todo_item.cpp
 │   ├── storage.cpp
 │   ├── todo_manager.cpp
-│   └── cmd_parser.cpp
+│   ├── string_utils.cpp
+│   └── parser.cpp    # 命令解析实现
 ├── CMakeLists.txt
 └── README.md
 ```

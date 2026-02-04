@@ -1,24 +1,9 @@
 #include "cmd_parser.h"
+#include "string_utils.h"
 #include <iostream>
-#include <sstream>
 #include <cctype>
 
 namespace todo {
-
-static void trim(std::string& s) {
-    while (!s.empty() && std::isspace(static_cast<unsigned char>(s.back()))) s.pop_back();
-    size_t i = 0;
-    while (i < s.size() && std::isspace(static_cast<unsigned char>(s[i]))) ++i;
-    s = s.substr(i);
-}
-
-static void split(const std::string& line, std::vector<std::string>& out) {
-    out.clear();
-    std::istringstream iss(line);
-    std::string token;
-    while (iss >> token)
-        out.push_back(token);
-}
 
 ParsedCommand parseLine(const std::string& line) {
     ParsedCommand result{Command::Unknown, {}};
